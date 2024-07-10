@@ -35,7 +35,7 @@ export class UserService {
    * Find a user by id
    * @param id
    */
-  async findOne(id: string): Promise<User> {
+  async findOne(id: number): Promise<User> {
     return this.userModel.findByPk(id);
   }
 

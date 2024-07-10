@@ -7,12 +7,16 @@ import { Promo } from '../promo/entities/promo.entity';
 import { SuggestedProduct } from '../suggestion/entities/suggestion.entity';
 import { Product } from '../product/entities/product.entity';
 import { SuggestionModule } from '../suggestion/suggestion.module';
-import { SendgridService } from "./sendgrid.service";
+import { SendgridService } from './sendgrid.service';
+import { UserModule } from '../user/user.module';
+import { PromoModule } from '../promo/promo.module';
 
 @Module({
   imports: [
     SequelizeModule.forFeature([User, Promo, SuggestedProduct, Product]),
     SuggestionModule,
+    UserModule,
+    PromoModule,
   ],
   providers: [EmailService, SendgridService],
   controllers: [EmailController],
