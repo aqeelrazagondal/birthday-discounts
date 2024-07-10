@@ -23,7 +23,22 @@ create and setup environment variables in .env file
     
     ``` EMAIL_USER=your-email@gmail.com
         EMAIL_PASS=your-email-password
-        APP_REDIRECT_URL=https://your-app-link.com
+        EMAIL_FROM=
+        APPLICATION_REDIRECT_URL=https://your-app-link.com
+        
+        DATABASE_HOST=localhost
+        DATABASE_PORT=3306
+        DATABASE_USER=admin
+        DATABASE_PASSWORD=admin
+        DATABASE_NAME=test
+        
+        JWT_PRIVATE_KEY=your-private-key
+        JWT_PUBLIC_KEY=your-public-key
+        JWT_EXPIRES_IN=1h
+        
+        TTL=3600
+        LIMIT=10
+
 
 ## Setting up the database for development and test
 
