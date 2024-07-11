@@ -4,7 +4,7 @@ import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { config } from '../config/config.development';
 require('dotenv').config();
-import * as csurf from 'csurf';
+// import * as csurf from 'csurf';
 import * as compression from 'compression';
 
 async function bootstrap() {
@@ -14,7 +14,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   // The csurf middleware is used to prevent CSRF attacks by adding a CSRF token to all incoming requests.
-  app.use(csurf());
+  // app.use(csurf());
 
   // The compression middleware is used to compress the response body of all incoming requests.
   app.use(compression());

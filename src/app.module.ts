@@ -17,7 +17,7 @@ import { PassportModule } from '@nestjs/passport';
 import { SchedulerModule } from './scheduler/scheduler.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { config } from '../config/config.development';
-import { SendgridService } from "./email/sendgrid.service";
+import { SendgridService } from './email/sendgrid.service';
 import { PurchaseHistoryModule } from './purchase-history/purchase-history.module';
 import { ProductPreferenceModule } from './product-preference/product-preference.module';
 @Module({
