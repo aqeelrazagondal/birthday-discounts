@@ -21,23 +21,28 @@ $ npm install
 ## Configuration
 create and setup environment variables in .env file
     
-    ``` EMAIL_USER=your-email@gmail.com
-        EMAIL_PASS=your-email-password
-        EMAIL_FROM=
-        APPLICATION_REDIRECT_URL=https://your-app-link.com
+    EMAIL_USER=your-email@gmail.com
+    EMAIL_PASS=your-email-password
+    EMAIL_FROM=
         
-        DATABASE_HOST=localhost
-        DATABASE_PORT=3306
-        DATABASE_USER=admin
-        DATABASE_PASSWORD=admin
-        DATABASE_NAME=test
+    APPLICATION_REDIRECT_URL=https://your-app-link.com
         
-        JWT_PRIVATE_KEY=your-private-key
-        JWT_PUBLIC_KEY=your-public-key
-        JWT_EXPIRES_IN=1h
+    DATABASE_HOST=localhost
+    DATABASE_PORT=3306
+    DATABASE_USER=admin
+    DATABASE_PASSWORD=admin
+    DATABASE_NAME=test
         
-        TTL=3600
-        LIMIT=10
+    JWT_PRIVATE_KEY=your-private-key
+    JWT_PUBLIC_KEY=your-public-key
+    JWT_EXPIRES_IN=1h
+        
+    TTL=3600
+    LIMIT=10
+        
+    SENDGRID_API_KEY=your-sendgrid-api-key
+        
+    PORT=3000
 
 
 ## Setting up the database for development and test
