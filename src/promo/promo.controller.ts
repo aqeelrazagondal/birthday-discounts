@@ -12,12 +12,19 @@ import {
 import { PromoService } from './promo.service';
 import { CreatePromoDto } from './dto/create-promo.dto';
 import { UpdatePromoDto } from './dto/update-promo.dto';
-import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiResponse,
+  ApiTags,
+} from '@nestjs/swagger';
 import { ResponseTransformer } from '../common/response-transformer.interceptor';
 import { Promo } from './entities/promo.entity';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @ApiTags('Promo APIs')
+@ApiBearerAuth()
 @UseInterceptors(ResponseTransformer)
 @UseGuards(JwtAuthGuard)
 @Controller('promo')

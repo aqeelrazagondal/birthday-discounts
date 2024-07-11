@@ -10,7 +10,7 @@ import { config } from '../../config/config.development';
   imports: [
     UserModule,
     JwtModule.register({
-      secret: config.jwtPrivateKey,
+      secret: config.secret || 'secret',
       signOptions: { expiresIn: config.expiresIn },
     }),
   ],

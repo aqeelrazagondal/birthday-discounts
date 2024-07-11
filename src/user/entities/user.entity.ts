@@ -86,7 +86,7 @@ export class User
 
   @AfterFind
   static async removePassword(instance: User) {
-    if (!instance.password) return;
+    if (!instance?.password) return;
     delete instance.password;
   }
 }

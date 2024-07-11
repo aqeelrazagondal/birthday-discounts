@@ -1,4 +1,5 @@
 import { Dialect } from 'sequelize/types';
+import * as process from "node:process";
 
 export const config = {
   database: {
@@ -12,6 +13,7 @@ export const config = {
   },
   jwtPrivateKey: process.env.JWT_PRIVATE_KEY,
   expiresIn: process.env.JWT_EXPIRES_IN,
+  secret: process.env.JWT_SECRET,
   emailConfig: {
     auth: {
       user: process.env.EMAIL_USER,

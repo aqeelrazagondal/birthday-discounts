@@ -15,7 +15,7 @@ export class UserService {
    * Create a new user
    * @param user User object
    */
-  async create(user: CreateUserDto): Promise<CreateUserDto> {
+  async create(user: CreateUserDto): Promise<string> {
     user.createdAt = new Date();
     user.updatedAt = new Date();
     // check email before creating a new user
@@ -24,7 +24,7 @@ export class UserService {
       throw new Error('Email already exists');
     }
     await this.userModel.create(user);
-    return user;
+    return 'Successfully created';
   }
 
   async findAll(): Promise<User[]> {
