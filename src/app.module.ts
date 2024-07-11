@@ -18,6 +18,8 @@ import { SchedulerModule } from './scheduler/scheduler.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { config } from '../config/config.development';
 import { SendgridService } from "./email/sendgrid.service";
+import { PurchaseHistoryModule } from './purchase-history/purchase-history.module';
+import { ProductPreferenceModule } from './product-preference/product-preference.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -52,6 +54,8 @@ import { SendgridService } from "./email/sendgrid.service";
     EmailModule,
     AuthModule,
     SchedulerModule,
+    PurchaseHistoryModule,
+    ProductPreferenceModule,
   ],
   controllers: [AppController],
   providers: [AppService, SeedService, JwtStrategy, SendgridService],

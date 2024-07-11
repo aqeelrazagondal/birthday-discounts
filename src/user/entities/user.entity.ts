@@ -11,6 +11,8 @@ import {
 import { Promo } from '../../promo/entities/promo.entity';
 import { SuggestedProduct } from '../../suggestion/entities/suggestion.entity';
 import * as bcrypt from 'bcrypt';
+import { PurchaseHistory } from "../../purchase-history/entities/purchase-history.entity";
+import { ProductPreference } from "../../product-preference/entities/product-preference.entity";
 
 export interface userAttributes {
   id?: number;
@@ -68,6 +70,12 @@ export class User
 
   @HasMany(() => SuggestedProduct)
   suggestedProducts?: SuggestedProduct[];
+
+  @HasMany(() => PurchaseHistory)
+  purchaseHistories?: PurchaseHistory[];
+
+  @HasMany(() => ProductPreference)
+  productPreferences?: ProductPreference[];
 
   @BeforeCreate
   static async hashPassword(instance: User) {

@@ -7,18 +7,24 @@ import {
   Index,
 } from 'sequelize-typescript';
 import { User } from '../../user/entities/user.entity';
+import { Product } from '../../product/entities/product.entity';
 
-interface PromoAttributes {
+interface ProductPreferenceAttributes {
   id?: number;
   userId: number;
-  code: string;
-  expiryDate: Date;
+  productId: number;
+  preferenceScore: number;
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 @Table({
-  tableName: 'promos',
+  tableName: 'product-preference',
   timestamps: true,
 })
-export class Promo extends Model<PromoAttributes> implements PromoAttributes {
+export class ProductPreference
+  extends Model<ProductPreferenceAttributes>
+  implements ProductPreferenceAttributes
+{
   @Column({
     primaryKey: true,
     autoIncrement: true,
@@ -39,15 +45,16 @@ export class Promo extends Model<PromoAttributes> implements PromoAttributes {
   })
   userId: number;
 
+  @ForeignKey(() => Product)
   @Column({
-    type: DataType.STRING,
+    type: DataType.INTEGER,
     allowNull: false,
   })
-  code: string;
+  productId: number;
 
   @Column({
-    type: DataType.DATE,
+    type: DataType.FLOAT,
     allowNull: false,
   })
-  expiryDate: Date;
+  preferenceScore: number;
 }
